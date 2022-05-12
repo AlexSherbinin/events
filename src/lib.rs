@@ -4,8 +4,8 @@ use std::hash::Hash;
 pub mod event_observer;
 pub mod multiple_handlers;
 
-type EventHandlerBoxed<Event> = Box<dyn EventHandler<Event>>;
-type MutEventHandlerBoxed<Event> = Box<dyn MutEventHandler<Event>>;
+pub type EventHandlerBoxed<Event> = Box<dyn EventHandler<Event>>;
+pub type MutEventHandlerBoxed<Event> = Box<dyn MutEventHandler<Event>>;
 
 pub trait EventHandler<Event> {
     fn handle_event(&self, event: &Event);
